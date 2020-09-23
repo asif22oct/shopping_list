@@ -9,6 +9,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
         shopping_list.addItem(item);
     })
+
+    let list = document.getElementById("list");
+    list.addEventListener("click", function(e) {
+        let current_item = shopping_list.list[e.target.parentNode.id];
+        current_item.added = true;
+
+        shopping_list.printList();
+    })
 });
 
 

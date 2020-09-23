@@ -12,18 +12,19 @@ class ShoppingList {
         let list = document.getElementById("list");
 
         list.innerHTML = '';
+        let counter = 0;
 
         for (let item of this.list) {
-            console.log(item.name);
-
             let div = document.createElement("div");
             div.classList.add("item");
+            div.id = counter;
+            counter++;
 
             let checkbox = document.createElement("input");
             checkbox.setAttribute("type", "checkbox");
 
             if (item.added) {
-                checkbox.setAttribute("checked");
+                checkbox.setAttribute("checked", "checked");
             }
 
             div.appendChild(checkbox);
@@ -41,17 +42,5 @@ class ShoppingList {
             list.appendChild(div);
 
         }
-        /*
-                <div class="item">
-            <input type="checkbox"> <span>1</span> <span>Gurka</span>
-        </div>
-        <div class="item">
-            <input type="checkbox"> <span>2</span> <span>Tomat</span>
-        </div>
-        <div class="item">
-            <input type="checkbox"> <span>4</span> <span>Bröd</span>
-        </div>
-
-        */
     }
 }
